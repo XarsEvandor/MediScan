@@ -1,6 +1,6 @@
 # project_mediscan
 
-A new Flutter project.
+A new Flutter project for the Google Solutions Challenge.
 
 ## Getting Started
 
