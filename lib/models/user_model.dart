@@ -10,5 +10,5 @@ class User {
   List<String>? immunizations;
   List<String>? familyHistory;
   List<String>? notes;
-  List<String>? relatives;
+  List<User>? relatives;
 }
