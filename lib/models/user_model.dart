@@ -3,6 +3,7 @@ class User {
   String? lastName;
   String? age;
   String? bloodType;
+  String? mobileNumber;
   List<String>? allergies;
   List<String>? medications;
   List<String>? conditions;
