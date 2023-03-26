@@ -7,7 +7,8 @@ import 'firebase_options.dart';
 import 'presentation/screens/geolocator_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeFirebase()
+    .then((w) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -63,4 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+Future<FirebaseApp> initializeFirebase() async {
+  return Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
