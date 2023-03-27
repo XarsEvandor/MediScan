@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:project_mediscan/presentation/screens/home_screen.dart';
 import 'firebase_options.dart';
 
 import 'presentation/screens/geolocator_screen.dart';
 
 void main() {
-  initializeFirebase()
-    .then((w) => runApp(const MyApp()));
+  initializeFirebase().then((w) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -56,6 +57,17 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const GeolocatorScreenProvider(),
+                ));
+              },
+            ),
+            MaterialButton(
+              height: 80,
+              minWidth: 150,
+              color: Colors.teal,
+              child: const Text('Home'),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
                 ));
               },
             ),
